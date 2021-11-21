@@ -1,0 +1,18 @@
+[Unit]
+Description=Ethereum go client
+After=syslog.target network.target
+
+[Service]
+User=geth
+Group=geth
+Type=simple
+WorkingDirectory=/opt/bsc
+ExecStart=/opt/bsc/build/bin/geth --config config.toml --datadir node --diffsync --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0 --ws --ws.port=8546  --ws.origins=*
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
