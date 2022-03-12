@@ -14,7 +14,7 @@ if [ $(get_version) = "ubuntu" ] || [ $(get_version) = "debian" ]; then
                         python3-dev libffi-dev htop jq nmap \
                         inxi vim git screen) >/dev/null 2>&1
 
-    get_msg "get golang $(curl -s https://golang.org/VERSION?m=text)"
+    get_msg "get golang $(curl -s https://go.dev/VERSION?m=text)"
     [ -d "/usr/local/go" ] && rm -rf /usr/local/go
     install_latest_go
 
