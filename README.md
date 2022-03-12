@@ -15,5 +15,5 @@ cd /opt/bsc/build/bin
 
 then put this
 ```bash
-./geth_linux attach http://localhost:8545 --exec eth.syncing
+./geth attach http://localhost:8545 --exec eth.syncing
 ```
